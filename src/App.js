@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import {useState,useEffect} from 'react';
+import Post from './posts'
+
 
 function App() {
+  const [post, setPost] = useState([])
+  const [newPost, setnewPost] = useState('')
+  const [text, setText] = useState('')
+  useEffect(() =>{
+  },[newPost]);
+
+  const storePost = e=>{
+    setnewPost(text);
+    e.preventDefault();
+    setPost([...post, text]);
+    setText('');
+  }
+
+  const content = e =>{
+    setText(e.target.value);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form onSubmit={storePost}>
+        <input type="text" value={text} onChange={content}></input>
+        <button type="submit" value="Post">Post</button>
+      </form>
+      {post.map(post => (
+        <Post title= {post}></Post>
+      ))}
+      
     </div>
   );
 }
