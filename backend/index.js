@@ -10,24 +10,15 @@ app.use(express.json({limit: '1mb'}));
 const database = new Datastore('databse.db');
 database.loadDatabase();
 
-app.get('/getAllPosts', (request, response) => {
-        database.find({},(err, data)=>{
-            if(err){
-                response.end();
-                return;
-            }
+app.get('/getAllPosts',  (request, response) => {
+        const data =  database.getAllData().sort();
         response.json(data);
     });
-    
-});
 
 app.post('/createDiscussion', (request,reposnse) => {
-    console.log(request.body);
     const data = request.body;
-
     const timestamp = Date.now();
     data.timestamp=timestamp;
-
     database.insert(data);
     reposnse.json(data);
 });

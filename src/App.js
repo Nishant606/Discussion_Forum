@@ -18,12 +18,10 @@ function App() {
     const res = await fetch(baseURL+"/getAllPosts");
     const data = await res.json()
     setPost(data);
-    console.log(post);
   };
 
   const storePost = async e=>{
     setnewPost(text);
-    e.preventDefault();
     const option = {
       method: 'POST',
       headers: {
@@ -37,6 +35,8 @@ function App() {
     setText('');
   }
 
+
+
   const topic = e =>{
     setTitle(e.target.value);
   }
@@ -47,8 +47,8 @@ function App() {
   return (
     <div className="App">
       <form className="input-form" onSubmit={storePost}>
-        <input className="input-title" placeholder="Topic of Discussion" type="text" value={title} onChange={topic}></input>
-        <input className="input-content" placeholder="Content" type="text" value={text} onChange={content}></input>
+        <input className="input-title"  placeholder="Topic of Discussion" type="text" value={title} onChange={topic} required></input>
+        <textarea className="input-content" rows="auto" placeholder="Content" type="text" value={text} onChange={content}></textarea>
         <button className="input-button" type="submit" value="Post">Post</button>
       </form>
       {post.map(post => (
