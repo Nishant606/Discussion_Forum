@@ -1,14 +1,10 @@
 .App {
   min-height: 100vh;
-  background-image: linear-gradient(
-    45deg,
-    #ff9a9e 0%,
-    #fad0c4 99%,
-    #fad0c4 100%
-  );
+  background: #fcfcfc;
 }
 
 .input-form {
+  border-color: black;
   min-height: 10vh;
   display: flex;
   justify-content: center;
@@ -18,28 +14,34 @@
 }
 
 .input-title {
+  font-family: 'Times New Roman', Times, serif;
+  border: 1px solid #000 !important;
   width: 30%;
   border: none;
   padding: 10px;
 }
 
 .input-content {
+  border: 1px solid #000 !important;
+  min-height: 10vh;
   margin-top: 10px;
   min-height: 20vh;
   min-width: 40vh;
-  border: none;
+  border: thick;
   padding: 10px;
 }
 
 .input-button {
+  border-radius: 5px;
   margin-top: 10px ;
-  background: lightcoral;
+  background: rgb(170, 83, 228);
   border: none;
   padding: 10px 20px;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .posts {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,13 +49,22 @@
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgb(71, 71, 71);
   margin: 20px;
-  background: white;
+  background: linear-gradient(to left, #bb39f3 0%, #995ae2 100%);
   padding: 10px 20px;
   min-width: auto;
   max-height: auto;
 }
 
 .posts .title {
+  color: rgb(255, 255, 255);
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: xx-large;  
-  align-items: center;
+ 
+}
+
+.posts .description{
+  font-size: medium;
+  color: rgb(0, 0, 0) ;
+  white-space: pre-wrap;
+  
 }

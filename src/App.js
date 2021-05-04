@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 import {useState,useEffect} from 'react';
-import Post from './posts'
+import Posts from './posts'
+import Post from './Post';
+import {BrowserRouter as Router, Switch, Route,Link} from 'react-router-dom'
 
 const baseURL = "http://localhost:4000";
 
@@ -38,24 +40,32 @@ function App() {
 
 
   const topic = e =>{
-    setTitle(e.target.value);
+    const data = e.target.value;
+    setTitle(data.toUpperCase());
   }
   const content = e =>{
     setText(e.target.value);
   }
 
   return (
+    <Router>
     <div className="App">
-      <form className="input-form" onSubmit={storePost}>
-        <input className="input-title"  placeholder="Topic of Discussion" type="text" value={title} onChange={topic} required></input>
-        <textarea className="input-content" rows="auto" placeholder="Content" type="text" value={text} onChange={content}></textarea>
-        <button className="input-button" type="submit" value="Post">Post</button>
-      </form>
-      {post.map(post => (
-        <Post title= {post.title} text={post.content}></Post>
-      ))}
+      <Switch>
+        <Route path="/" exact>
+        <form className="input-form" onSubmit={storePost}>
+          <input className="input-title"  placeholder="Topic of Discussion" type="text" value={title} onChange={topic} required></input>
+          <textarea className="input-content" rows="auto" placeholder="Content" type="text" value={text} onChange={content}></textarea>
+          <button className="input-button" type="submit" value="Post">Post</button>
+        </form>
+        {post.map(post => (
+          <Posts key= {post._id} id= {post._id} title= {post.title} text={post.content}></Posts>
+        ))}
+        </Route>
+        <Route path="/post/:id" component={Post}/>
+      </Switch>
       
     </div>
+    </Router>
   );
 }
 

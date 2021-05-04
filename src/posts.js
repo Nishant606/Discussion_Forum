@@ -1,14 +1,13 @@
-import React from "react";
-
-const Post = ({title, text})=>{
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+const Posts = ({id, title, text})=>{
     return(
         <div className="posts">   
-            <h1 className= "title" >{title}</h1>
-            <label style={{whiteSpace:"pre-wrap"}}>{text}</label>
+            <h1 className= "title" ><Link to={`post/${id}`}>{title}</Link></h1>
+            <label className= "description">{text}</label>
         </div>
     );
 
 }
 
-export default Post;
+export default Posts;
