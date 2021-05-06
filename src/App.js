@@ -3,9 +3,8 @@ import './App.css';
 import {useState,useEffect} from 'react';
 import Posts from './posts'
 import Post from './Post';
-import {BrowserRouter as Router, Switch, Route,Link} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
-const baseURL = "http://localhost:4000";
 
 function App() {
   const [post, setPost] = useState([]);
@@ -17,21 +16,21 @@ function App() {
   },[newPost]);
 
   const getPosts = async ()=>{
-    const res = await fetch(baseURL+"/getAllPosts");
+    const res = await fetch("/getAllPosts");
     const data = await res.json()
     setPost(data);
   };
 
-  const storePost = async e=>{
+  const storePost = async e =>{
     setnewPost(text);
     const option = {
       method: 'POST',
       headers: {
           'CONTENT-TYPE' : 'application/json'
       },
-      body: JSON.stringify({"title": title, "content": text})
+      body: JSON.stringify({"title": title, "content": text, "comments": []})
     };
-    const response = await fetch(baseURL+'/createDiscussion',option);
+    const response = await fetch('/createDiscussion',option);
     console.log(response);
     setTitle('');
     setText('');

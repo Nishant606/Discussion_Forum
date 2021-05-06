@@ -22,3 +22,14 @@ app.post('/createDiscussion', (request,reposnse) => {
     database.insert(data);
     reposnse.json(data);
 });
+
+app.get('/post/:id',  (request, response) => {
+    const id  = request.params.id;
+    console.log(id);
+    database.findOne({_id:`${id}`}, (err,data) =>{
+        response.json(data);
+    });
+    
+});
+
+app.post('/')
