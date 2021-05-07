@@ -60,9 +60,8 @@ function App() {
           <Posts key= {post._id} id= {post._id} title= {post.title} text={post.content}></Posts>
         ))}
         </Route>
-        <Route path="/post/:id" component={Post}/>
+        <Route path="/post/:id" exact component={Post}/>
       </Switch>
-      
     </div>
     </Router>
   );
