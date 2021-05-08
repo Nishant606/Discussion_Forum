@@ -37,8 +37,8 @@ app.post('/post/addComment/:id', (request,response)=> {
     const data = request.body;
     console.log(data);
     database.update(
-        { _id: id }, 
-        { $set: { Comment: ""} },
+        { "_id": id }, 
+        { $set: { "comments": data.comments} },
         {},// this argument was missing
         function (err, numReplaced) {
           console.log("replaced---->" + numReplaced);
