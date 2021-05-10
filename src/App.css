@@ -1,6 +1,6 @@
 .App {
   min-height: 100vh;
-  background: #444343;
+  background: #21262d;
 }
 
 .input-form {
@@ -22,7 +22,7 @@
 }
 
 .input-content {
-  border: 1px solid #000 !important;
+  border: 1px solid #1e4273 !important;
   min-height: 10vh;
   margin-top: 10px;
   min-height: 20vh;
@@ -34,7 +34,7 @@
 .input-button {
   border-radius: 5px;
   margin-top: 10px;
-  background: rgb(170, 83, 228);
+  background: #44cd25;
   border: none;
   padding: 10px 20px;
   color: rgb(255, 255, 255);
@@ -46,9 +46,11 @@
   justify-content: center;
   flex-wrap: wrap;
   border-radius: 10px;
-  box-shadow: 0px 5px 20px rgb(71, 71, 71);
-  margin: 20px;
-  background: linear-gradient(to left, #bb39f3 0%, #995ae2 100%);
+  border: 1px solid #e4e4e4;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background: #21262d;
   padding: 10px 20px;
   min-width: auto;
   max-height: auto;
@@ -57,11 +59,56 @@
 .posts .title {
   color: rgb(255, 255, 255);
   font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: xx-large;
+  font-size: 2.2em;
 }
 
 .posts .description {
-  font-size: medium;
-  color: rgb(0, 0, 0);
+  font-size: 1.2em;
+  color: rgb(255, 250, 250);
+  white-space: pre-wrap;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  border: 1px solid #e4e4e4;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background: #21262d;
+  padding: 10px 20px;
+  min-width: auto;
+  max-height: auto;
+}
+.post .input-content {
+  border: 1px solid #1e4273 !important;
+  min-height: 10vh;
+  margin-top: 10px;
+  min-height: 20vh;
+  min-width: 40vh;
+  border: thick;
+  padding: 10px;
+}
+.post .input-form {
+  border-color: black;
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post .title {
+  color: rgb(255, 255, 255);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 2.2em;
+}
+
+.post .description {
+  font-size: 1.2em;
+  color: rgb(255, 250, 250);
   white-space: pre-wrap;
 }

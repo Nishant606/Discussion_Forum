@@ -23,7 +23,7 @@ const Post = ( match )=>{
             },
             body: JSON.stringify({"comments": commenttext})
         };
-        const response = await fetch(`/post/addcomment/${id}`,option);
+        await fetch(`/post/addcomment/${id}`,option);
         setcommenttext('');
     }
 
@@ -33,22 +33,31 @@ const Post = ( match )=>{
     
     useEffect(() => {     
         getPostDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     
     return (
-        <div className="posts" >   
+        <div>   
+        <div className="post">
             <h1 className= "title">{PostDetails.title}</h1>
             <label className= "description">{PostDetails.content}</label>
-            <textarea style={{whiteSpace:"pre-wrap"}}rows="auto" placeholder="Comment" value={commenttext} onChange={commentfield}></textarea>
+            <form className="input-form" onSubmit={addComment}>
+            <textarea className="input-content" rows="auto" placeholder="Comment" value={commenttext} onChange={commentfield}></textarea>
+            <button type="submit">comment</button>
+            </form>
+            </div>
+            <div>
             {
-                comment.map(k => (
-                <Comment data={k}/>
-                ))
+            comment.map(k => (
+            <Comment data={k}/>
+            ))
 
             }
-            <button onClick={addComment}>comment</button>
+            </div>
         </div>
+        
+        
     );
 
 }
