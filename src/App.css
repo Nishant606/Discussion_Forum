@@ -1,6 +1,6 @@
 .App {
   min-height: 100vh;
-  background: #fcfcfc;
+  background: #444343;
 }
 
 .input-form {
@@ -14,7 +14,7 @@
 }
 
 .input-title {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   border: 1px solid #000 !important;
   width: 30%;
   border: none;
@@ -33,7 +33,7 @@
 
 .input-button {
   border-radius: 5px;
-  margin-top: 10px ;
+  margin-top: 10px;
   background: rgb(170, 83, 228);
   border: none;
   padding: 10px 20px;
@@ -41,7 +41,6 @@
 }
 
 .posts {
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,14 +56,12 @@
 
 .posts .title {
   color: rgb(255, 255, 255);
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: xx-large;  
- 
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: xx-large;
 }
 
-.posts .description{
+.posts .description {
   font-size: medium;
-  color: rgb(0, 0, 0) ;
+  color: rgb(0, 0, 0);
   white-space: pre-wrap;
-  
 }

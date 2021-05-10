@@ -35,15 +35,10 @@ app.get('/post/:id',  (request, response) => {
 app.post('/post/addComment/:id', (request,response)=> {
     const id = request.params.id;
     const data = request.body;
-    console.log(data);
-    database.update(
-        { "_id": id }, 
-        { $set: { "comments": data.comments} },
-        {},// this argument was missing
-        function (err, numReplaced) {
-          console.log("replaced---->" + numReplaced);
-        }
-        );
+    console.log(data.comments);
+    database.update({ _id:id},{ $push:{ comments: data.comments}},{},function(){
+        
+        });
 })
 
-app.post('/')
+app.post('/')   

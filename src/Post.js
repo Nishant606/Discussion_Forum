@@ -14,8 +14,6 @@ const Post = ( match )=>{
         console.log(data);
         setPostDetails(data);
         setcomment(data.comments);
-        
-        
     };
     const addComment= async e =>{
         const option = {
@@ -25,7 +23,7 @@ const Post = ( match )=>{
             },
             body: JSON.stringify({"comments": commenttext})
         };
-        const response = await fetch('/post/addcomment/'+id,option);
+        const response = await fetch(`/post/addcomment/${id}`,option);
         setcommenttext('');
     }
 
