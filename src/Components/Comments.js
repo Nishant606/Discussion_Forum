@@ -4,7 +4,6 @@ const Comment = ({data})=>{
     return(
         <div className="posts">   
             <label className= "description">{data}</label>
-            
         </div>
     );
 

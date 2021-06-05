@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import {useState,useEffect} from 'react';
-import Posts from './posts'
-import Post from './Post';
+import Posts from './Components/posts'
+import Post from './Components/Post';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 
