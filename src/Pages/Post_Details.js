@@ -1,6 +1,6 @@
 import React from "react";
 import {useState, useEffect} from 'react';
-import Comment from './Comments'
+import Comment from '../Components/Comments.js'
 
 const Post = ( match )=>{
     const id = match.match.params.id;

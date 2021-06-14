@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import {useState,useEffect} from 'react';
 import Posts from './Components/posts'
-import Post from './Components/Post';
+import Post from './Pages/Post_Details';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Nav from './Components/Nav'
 
 
 function App() {
@@ -35,9 +36,6 @@ function App() {
     setTitle('');
     setText('');
   }
-
-
-
   const topic = e =>{
     const data = e.target.value;
     setTitle(data.toUpperCase());
@@ -49,7 +47,9 @@ function App() {
   return (
     <Router>
     <div className="App">
+      <Nav/>
       <Switch>
+        
         <Route path="/" exact>
         <form className="input-form" onSubmit={storePost}>
           <input className="input-title"  placeholder="Topic of Discussion" type="text" value={title} onChange={topic} required></input>
