@@ -3,14 +3,35 @@
   background: #ffffff;
   display: flex;
   flex-direction: column;
-  margin: 0 10vw;
-  background: rgb(59, 59, 59);
+  
+  background: #0e0e10;
 }
 
-
-.posts{
+.home{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+.top{
+  display: flex;
+  max-width: 10vw;
+  flex-grow: 0;
+  flex-direction: column;
+  height: fit-content;
+  align-items: center;
+  border-right: solid white;
+  border-width: .1em; 
+  color: white;
+  margin-top: 5vh;
+  padding-right: 5vw;
+}
+.posts{
+  margin: 0;
+  flex-grow: 2;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }

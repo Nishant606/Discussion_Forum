@@ -1,0 +1,43 @@
+.inputform {
+    border-color: black;
+    min-height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .inputTitle {
+    color: white;
+    background: #18181b;    
+    font-family: "Times New Roman", Times, serif;
+    border: 1px solid #000 !important;
+    margin-top: 1em;
+    width: 80%;
+    border: none;
+    padding: 10px;
+  }
+  
+  .inputcontent {
+    color: white;
+    background: #18181b; 
+    border: 1px solid #1e4273 !important;
+    width: 80%;
+    min-height: 10vh;
+    margin-top: 10px;
+    min-height: 20vh;
+    min-width: 40vh;
+    border: thick;
+    padding: 10px;
+  }
+  
+  .inputbutton {
+    border-radius: 5px;
+    margin-top: 10px;
+    background: #9147ff;
+    border: none;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+  }

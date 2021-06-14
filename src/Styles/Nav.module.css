@@ -1,26 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap');
 .nav{
     display:flex;
-    background: rgb(37, 37, 37);
-    height: 5vh ;
+    background: #18181b;
+    height: 7vh ;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     color: white;
-    
+    border-bottom: solid black;
    
 }
 h1{
+    margin-left: 5vw;
     color: white;
 }
 .button{
-    height: 3vh;
-    color: rgb(0, 0, 0);
+    margin-right: 5vw;
+    font: large;
+    height: 70%;
+    width: 10vw;
+    color: rgb(255, 255, 255);
     background: transparent;
-    background:yellowgreen;
+    background:#9147ff;
     border-radius: 2vh;
 }
 .button:hover{
-    color: rgb(255, 0, 0);
     transform: scale(1.1);
 }
 
