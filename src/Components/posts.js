@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Styles from '../Styles/Post.module.css'
 const Posts = ({id, title, text})=>{
     return(
-        <div className="posts">   
-            <h1 className= "title" ><Link className="title" to={`post/${id}`} 
+        <div className= {Styles.posts}>   
+            <h1 className= {Styles.title} ><Link className= {Styles.title} to={`post/${id}`} 
                  exact>{title}</Link></h1>
-            <label className= "description">{text}</label>
+            <label className= {Styles.des}>{text}</label>
         </div>
     );
 

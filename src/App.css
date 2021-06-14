@@ -1,4 +1,16 @@
 .App {
   min-height: 100vh;
   background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10vw;
+  background: rgb(59, 59, 59);
+}
+
+
+.posts{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }

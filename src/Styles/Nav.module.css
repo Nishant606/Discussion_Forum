@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap');
+.nav{
+    display:flex;
+    background: rgb(37, 37, 37);
+    height: 5vh ;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    
+   
+}
+h1{
+    color: white;
+}
+.button{
+    height: 3vh;
+    color: rgb(0, 0, 0);
+    background: transparent;
+    background:yellowgreen;
+    border-radius: 2vh;
+}
+.button:hover{
+    color: rgb(255, 0, 0);
+    transform: scale(1.1);
+}
+
+
