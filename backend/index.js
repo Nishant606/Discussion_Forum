@@ -20,6 +20,7 @@ app.post('/createDiscussion', (request,reposnse) => {
     const data = request.body;
     const timestamp = Date.now();
     data.timestamp=timestamp;
+    data.votes = 0;
     console.log(data);
     database.insert(data);
     reposnse.json(data);
