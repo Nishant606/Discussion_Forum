@@ -56,12 +56,16 @@ function App() {
           <textarea className="input-content" rows="auto" placeholder="Content" type="text" value={text} onChange={content}></textarea>
           <button className="input-button" type="submit" value="Post">Post</button>
         </form>
+        <div className='posts'>
         {post.map(post => (
           <Posts key= {post._id} id= {post._id} title= {post.title} text={post.content}></Posts>
         ))}
+        </div>
         </Route>
         <Route path="/post/:id" exact component={Post}/>
+        
       </Switch>
+      
     </div>
     </Router>
   );
