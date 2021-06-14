@@ -1,6 +1,7 @@
 import React from "react";
 import {useState, useEffect} from 'react';
-import Comment from '../Components/Comments.js'
+import Comment from '../Components/Comments.js';
+import Styles from '../Styles/Posts.module.css';
 
 const Post = ( match )=>{
     const id = match.match.params.id;
@@ -37,26 +38,24 @@ const Post = ( match )=>{
     },[]);
 
     
-    return (
-        <div>   
-        <div className="post">
-            <h1 className= "title">{PostDetails.title}</h1>
-            <label className= "description">{PostDetails.content}</label>
-            <form className="input-form" onSubmit={addComment}>
-            <textarea className="input-content" rows="auto" placeholder="Comment" value={commenttext} onChange={commentfield}></textarea>
+    return (  
+        <div>
+            <div className={Styles.post}>
+            <h1 className= {Styles.title}>{PostDetails.title}</h1>
+            <p className= {Styles.content}>{PostDetails.content}</p>
+            <form className={Styles.inputform} onSubmit={addComment}>
+            <textarea className={Styles.inputcontent} rows="auto" placeholder="Comment" value={commenttext} onChange={commentfield}></textarea>
             <button type="submit">comment</button>
             </form>
             </div>
-            <div>
-            {
-            comment.map(k => (
-            <Comment data={k}/>
-            ))
-
-            }
+            <div className={Styles.comment}>
+                {
+                    comment.map(k => (
+                    <Comment data={k}/>
+                    ))
+                }
             </div>
         </div>
-        
         
     );
 

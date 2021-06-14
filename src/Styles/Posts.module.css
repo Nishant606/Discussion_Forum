@@ -1,0 +1,72 @@
+.post{
+    border-color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+
+}
+.title {
+    color: #883ff5;
+    margin: 0;
+    background: #18181b;    
+    font-family: "Times New Roman", Times, serif;
+    border: 1px solid #000 !important;
+    padding: 10px;
+    width: 80%;
+  }
+  
+  .content {
+    color: white;
+    background: #18181b; 
+    border: 1px solid #000000 !important;
+    width: 80%;
+    
+    margin-top: 10px;
+    
+    min-width: 40vh;
+    border: thick;
+    padding: 10px;
+    white-space: pre-wrap;
+  }
+  .inputform{
+      width: 60%;
+      height: 10vh;
+  }
+  .inputcontent{
+      background:#18181b ;
+      color: rgb(255, 255, 255);
+      width: 100%;
+      height: 100%;
+  }
+  button{
+    border-radius: 5px;
+    margin-top: 10px;
+    background: #9147ff;
+    border: none;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+  }
+  .comment{
+    border-color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+  }
+  .commentcontent{
+    color: white;
+    background: #18181b; 
+    border: 1px solid #000000 !important;
+    width: 80%;
+    height: fit-content;
+
+    margin-top: 10px;
+    
+    min-width: 40vh;
+    border: thick;
+    padding: 10px;
+    white-space: pre-wrap;
+  }
