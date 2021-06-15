@@ -3,23 +3,29 @@ import './App.css';
 import {useState,useEffect} from 'react';
 import Posts from './Components/posts'
 import Post from './Pages/Post_Details'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import Nav from './Components/Nav';
 import CreatePost from './Pages/CreatePost'
 
-
 function App() {
   const [post, setPost] = useState([]);
-  useEffect(() =>{
+  const [topPost, setTopPost] = useState([]);
+  useEffect(() => {
     getPosts();
   }, []);
   const getPosts = async ()=>{
     const res = await fetch("/getAllPosts");
     const data = await res.json();
+    const data2 = await data;
     data.sort(function (a, b) {
       return  b.timestamp - a.timestamp;
     });
-
+    data2.sort(function (a, b) {
+      return  b.votes - a.votes;
+    });
+    console.log(data);
+    console.log(data2); 
+    setTopPost(data2);
     setPost(data);
   };
 
@@ -31,16 +37,14 @@ function App() {
         
         <Route path="/" exact>
         
-        <div className='home'>
-          <div className='top'>
-            <h2>Top Discussions</h2>
+      <div className='home'>
+        <div className='top' style={{overflow:"hidden"}}>
+            <h2 style={{color:"#883ff5", borderBottom:"solid white 0.06em"}}>Top Discussions</h2>
             <ul>
-              <li>lOisdlkfaj;laksdj ijlksdj flkj</li>
-              <li>lOisdlkfaj;laksdj ijlksdj flkj</li>
-              <li>lOisdlkfaj;laksdj ijlksdj flkj</li>
-              <li>lOisdlkfaj;laksdj ijlksdj flkj</li>
-              <li>lOisdlkfaj;laksdj ijlksdj flkj</li>
-
+                  {topPost.map((top) => (
+                    <Link style={{color:"white",  textDecoration:"none"}} to={`post/${top._id}`}><li>{top.title}</li></Link>
+                    
+                  ))}
             </ul>
           </div>
           <div className='posts'>

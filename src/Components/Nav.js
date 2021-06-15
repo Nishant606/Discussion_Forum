@@ -6,7 +6,7 @@ const Nav =  () =>{
     return (
         <div className={Styles.nav}>
                 
-            <h1>Discussion Forum</h1>
+            <Link to={`/`}><h1>Discussion Forum</h1></Link>
             <Link to={`createPost`} exact>
             <button className={Styles.button}><b>Create Discusion</b></button>
             </Link>

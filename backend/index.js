@@ -42,4 +42,14 @@ app.post('/post/addComment/:id', (request,response)=> {
         });
 })
 
+app.post('/post/upvote/:id', (request,response)=> {
+    const id = request.params.id;
+    console.log(id);
+    const data = request.body;
+    console.log(data.upvote);
+    database.update({ _id:id},{ $inc:{votes:1}},{upsert:true,returnUpdatedDocs: true},function(){
+    });
+
+})
+
 app.post('/')   
