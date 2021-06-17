@@ -15,10 +15,12 @@ function App() {
   }, []);
   const getPosts = async ()=>{
     const res = await fetch("/getAllPosts");
-    const data = await res.json();
-    const data2 = await data;
+    let data = await res.json();
+    let data2 = await JSON.parse(JSON.stringify(data));
+    console.log(data);
+    console.log(data2);
     data.sort(function (a, b) {
-      return  b.timestamp - a.timestamp;
+      return  a.timestamp - b.timestamp;
     });
     data2.sort(function (a, b) {
       return  b.votes - a.votes;
