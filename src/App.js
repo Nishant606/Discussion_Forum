@@ -14,9 +14,10 @@ function App() {
     getPosts();
   }, []);
   const getPosts = async ()=>{
-    const res = await fetch("/getAllPosts");
+    const res = await fetch("/getAllPosts")
+      .then();
     let data = await res.json();
-    let data2 = await JSON.parse(JSON.stringify(data));
+    let data2 = JSON.parse(JSON.stringify(data));
     console.log(data);
     console.log(data2);
     data.sort(function (a, b) {
@@ -25,7 +26,7 @@ function App() {
     data2.sort(function (a, b) {
       return  b.votes - a.votes;
     });
-    console.log(data);
+    console.log(data);  
     console.log(data2); 
     setTopPost(data2);
     setPost(data);
