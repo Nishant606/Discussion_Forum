@@ -28,6 +28,7 @@
 }
 ul :hover {
   text-decoration: underline;
+  color: #9147ff;
 }
 .posts {
   margin: 0;

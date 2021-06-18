@@ -49,7 +49,8 @@ function App() {
                     
                   ))}
             </ul>
-          </div>
+              </div>
+              <hr width="1" size="100vh" style={{marginLeft:"1vw"}}></hr>
           <div className='posts'>
             <h1>Recent Discussions</h1>
             {post.map(post => (
