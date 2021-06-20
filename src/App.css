@@ -11,6 +11,7 @@
   display: flex;
   justify-content: space-evenly;
 }
+
 .top {
   display: flex;
   max-width: 10vw;
@@ -40,4 +41,14 @@ ul :hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.search {
+  margin: 1vh 0;
+  height: 3.5vh;
+  color: white;
+  background: #18181b;
+  align-self: center;
+  width: 70%;
+  border: solid #0e0e10;
 }
