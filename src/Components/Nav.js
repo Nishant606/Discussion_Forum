@@ -9,7 +9,7 @@ const Nav = () => {
             <div className={Styles.searchbar}>
             </div>
             <Link to={`createPost`} className={Styles.item2} exact>
-            <button className={Styles.button}><b>Create Discusion</b></button></Link>
+            <button className={Styles.button}><b>Create Discussion</b></button></Link>
         </div>
         
     )

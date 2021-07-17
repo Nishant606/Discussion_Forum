@@ -3,7 +3,6 @@
   display: grid;
   grid-template-columns: auto auto auto;
   background: #18181b;
-
   color: white;
   border-bottom: solid black;
 }
